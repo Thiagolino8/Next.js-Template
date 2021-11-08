@@ -12,7 +12,7 @@ const Home: NextPage = () => {
 
       <main>
         <h1>Default Template Next.js</h1>
-        <p>Este é um template base para projetos Next.js que contem Typescript e Styled Components</p>
+        <p>Este é um template base para projetos Next.js que contem Typescript, Tailwind, Twin.macro e Styled Components</p>
       </main>
 
       <footer>
