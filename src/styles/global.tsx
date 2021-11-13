@@ -1,24 +1,39 @@
 import { createGlobalStyle } from 'styled-components'
-import tw, { GlobalStyles as BaseStyles } from 'twin.macro'
+import tw, { GlobalStyles as BaseStyles, theme } from 'twin.macro'
+import 'tailwindcss/tailwind.css'
 
 const CustomStyles = createGlobalStyle`
   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: 0;
+    ${tw`
+      m-0
+      p-0
+      box-border
+      outline-none
+    `}
   }
 
   body {
-    background: ${props => props.theme.colors.background};
-    color: ${props => props.theme.colors.text};
-    font: 400 16px Roboto, sans-serif;
-    ${tw`antialiased`}
+    ${tw`
+      bg-background
+      text-text
+      antialiased
+      font-normal
+      font-sans
+    `}
+  }
+`
+
+const TailwindStyles = createGlobalStyle`
+    :root {
+    --color-background: ${props => props.theme.colors.background};
+    --color-text: ${props => props.theme.colors.text};
+    --color-primary: ${props => props.theme.colors.primary};
   }
 `
 
 const GlobalStyles = () => (
   <>
+    <TailwindStyles />
     <BaseStyles />
     <CustomStyles />
   </>

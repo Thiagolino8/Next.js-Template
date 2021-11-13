@@ -1,22 +1,28 @@
-import styled from "styled-components";
+import tw, { styled } from 'twin.macro'
 
 export const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  ${tw`
+  w-screen
+  h-screen
+  flex
+  justify-center
+  items-center
+  flex-col
+  `}
 
   h1 {
-    font-size: 54px;
-    color: ${(props) => props.theme.colors.primary};
-    margin-top: 40px;
+    ${tw`
+      text-primary
+      text-6xl
+      mt-10
+    `}
   }
 
-  p {
-    margin-top: 24px;
-    font-size: 24px;
-    line-height: 32px;
+  p{
+    ${tw`
+      mt-6
+      text-2xl
+      leading-8
+    `}
   }
 `
