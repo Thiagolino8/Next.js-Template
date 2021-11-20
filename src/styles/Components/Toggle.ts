@@ -1,6 +1,5 @@
 import tw from 'twin.macro';
 import styled from 'styled-components'
-import { Switch } from '@headlessui/react'
 
 interface ToggleProps {
   enabled: boolean;
