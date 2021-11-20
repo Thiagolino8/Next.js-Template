@@ -2,12 +2,12 @@ import tw, { styled } from 'twin.macro'
 
 export const Container = styled.div`
   ${tw`
+  p-14
+  flex
+  flex-col
   w-screen
   h-screen
-  flex
   justify-center
-  items-center
-  flex-col
   `}
 
   h1 {
@@ -18,11 +18,26 @@ export const Container = styled.div`
     `}
   }
 
-  p{
+  p {
     ${tw`
       mt-6
       text-2xl
       leading-8
     `}
   }
+`
+
+export const Header = tw.header`
+  flex
+  items-start
+  justify-end
+`
+
+export const Main = tw.main`
+  h-auto
+  w-auto
+  flex
+  flex-1
+  flex-col
+  justify-center
 `

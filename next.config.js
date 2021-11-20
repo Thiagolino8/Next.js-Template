@@ -14,10 +14,6 @@ module.exports = {
     formats: ['image/avif', 'image/webp']
   },
   webpack: (config, { isServer }) => {
-    // faster rebuilds for many files:
-    config.module.unsafeCache = true
-    // workarounds for windows:
-    config.plugins.push(c => (c.options.devtool = 'eval-source-map'))
     if (!isServer) {
       // don't resolve 'fs' module on the client to prevent this error on build --> Error: Can't resolve 'fs'
       config.resolve.fallback = {
