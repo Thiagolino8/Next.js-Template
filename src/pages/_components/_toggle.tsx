@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Toggle: NextPage<Props> = ({ toggleTheme }) => {
-  const [enabled, setEnabled] = useState(true)
+  const [enabled, setEnabled] = useState(false)
 
 
   const handleSwitch = () => {
