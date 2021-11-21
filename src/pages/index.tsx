@@ -10,11 +10,11 @@ import Toggle from './_components/_toggle'
 
 
 const Home: NextPage = () => {
-const [theme, setTheme] = useState(dark)
+  const [theme, setTheme] = useState(dark)
 
-const toggleTheme = () => {
-  setTheme(theme.title === 'light' ? dark : light)
-}
+  const toggleTheme = () => {
+    setTheme(theme.title === 'light' ? dark : light)
+  }
   return (
     <ThemeProvider theme={theme}>
       <Container>
