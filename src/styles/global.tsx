@@ -1,9 +1,6 @@
 import { createGlobalStyle, ThemeContext } from 'styled-components'
 import tw, { GlobalStyles as BaseStyles} from 'twin.macro'
 import 'tailwindcss/tailwind.css'
-import { useContext } from 'react'
-
-const {colors} = useContext(ThemeContext)
 
 const CustomStyles = createGlobalStyle`
   * {
