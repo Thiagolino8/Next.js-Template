@@ -1,4 +1,4 @@
-import { createGlobalStyle, ThemeContext } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 import tw, { GlobalStyles as BaseStyles} from 'twin.macro'
 import 'tailwindcss/tailwind.css'
 
@@ -23,7 +23,7 @@ const CustomStyles = createGlobalStyle`
   }
 `
 
-const TailwindStyles = createGlobalStyle`
+const CssStyles = createGlobalStyle`
     :root {
     --color-background: ${props => props.theme.colors.background};
     --color-text: ${props => props.theme.colors.text};
@@ -33,7 +33,7 @@ const TailwindStyles = createGlobalStyle`
 
 const GlobalStyles = () => (
   <>
-    <TailwindStyles />
+    <CssStyles />
     <BaseStyles />
     <CustomStyles />
   </>
