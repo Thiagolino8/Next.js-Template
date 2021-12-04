@@ -1,15 +1,12 @@
 import { Switch } from '@headlessui/react'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import type { NextPage } from 'next'
+import { ThemeContext } from '../../states/themeContext'
 import ToggleButton from '../../styles/Components/Toggle'
 
-interface Props {
-  toggleTheme(): void
-}
-
-const Toggle: NextPage<Props> = ({ toggleTheme }) => {
+const Toggle: NextPage = () => {
   const [enabled, setEnabled] = useState(false)
-
+  const {toggleTheme} = useContext(ThemeContext)
 
   const handleSwitch = () => {
     setEnabled(enabled === true ? false : true)
@@ -29,3 +26,4 @@ const Toggle: NextPage<Props> = ({ toggleTheme }) => {
 }
 
 export default Toggle
+

@@ -1,22 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import light from '../styles/themes/light'
-import dark from '../styles/themes/dark'
-import { useState } from 'react'
-import { ThemeProvider } from 'styled-components'
-import GlobalStyles from '../styles/global'
 import { Container, Header, Main } from '../styles/Pages/Home'
-import Toggle from './_components/_toggle'
+import Toggle from '../assets/components/toggle'
 
 
 const Home: NextPage = () => {
-  const [theme, setTheme] = useState(light)
-
-  const toggleTheme = () => {
-    setTheme(theme.title === 'light' ? dark : light)
-  }
   return (
-    <ThemeProvider theme={theme}>
       <Container>
         <Head>
           <title>Template Next.js</title>
@@ -24,7 +13,7 @@ const Home: NextPage = () => {
         </Head>
 
         <Header>
-          <Toggle toggleTheme={toggleTheme}/>
+          <Toggle/>
         </Header>
 
         <Main>
@@ -37,8 +26,6 @@ const Home: NextPage = () => {
 
         <footer></footer>
       </Container>
-      <GlobalStyles />
-    </ThemeProvider>
   )
 }
 
