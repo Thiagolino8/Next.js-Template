@@ -1,5 +1,5 @@
 import { NextPage } from 'next'
-import React, { useState } from 'react'
+import { createContext, useContext, useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import dark from '../styles/themes/dark'
 import light from '../styles/themes/light'
@@ -14,8 +14,8 @@ interface ThemeProps {
   toggleTheme: () => void
 }
 
-export const ThemeContext = React.createContext<ThemeProps>({} as ThemeProps)
-export const useTheme = () => React.useContext(ThemeContext)
+const ThemeContext = createContext<ThemeProps>({} as ThemeProps)
+export const useTheme = () => useContext(ThemeContext)
 
 const ThemeContextProvider: NextPage<Props> = ({ children }) => {
   const [theme, setTheme] = useState(light)
