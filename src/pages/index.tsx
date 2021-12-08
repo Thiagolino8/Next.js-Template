@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Container, Header, Main } from '../styles/Pages/Home'
 import Toggle from '../assets/components/toggle'
-import SwitchContextProvider from '../states/switchContext'
+import SwitchContextProvider from '../hooks/useSwitch'
 
 
 const Home: NextPage = () => {

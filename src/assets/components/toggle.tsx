@@ -1,6 +1,6 @@
 import { Switch } from '@headlessui/react'
 import type { NextPage } from 'next'
-import { useSwitch } from '../../states/switchContext'
+import { useSwitch } from '../../hooks/useSwitch'
 import ToggleButton from '../../styles/Components/Toggle'
 
 const Toggle: NextPage = () => {

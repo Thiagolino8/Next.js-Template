@@ -29,7 +29,7 @@ export default class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html lang="pt">
+      <Html lang="pt-br">
         <Head>
           <meta charSet="utf-8" />
           <link
@@ -38,6 +38,7 @@ export default class MyDocument extends Document {
           />
         </Head>
         <body>
+          <script src="noflash.js" />
           <Main />
           <NextScript />
         </body>

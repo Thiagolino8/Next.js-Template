@@ -1,30 +1,34 @@
 import { NextPage } from 'next'
-import { createContext, useContext, useState } from 'react'
-import { ThemeProvider } from 'styled-components'
+import { createContext, useContext } from 'react'
+import { ThemeProvider, DefaultTheme } from 'styled-components'
 import dark from '../styles/themes/dark'
 import light from '../styles/themes/light'
 import GlobalStyles from '../styles/global'
+import useDarkMode, { DarkMode } from 'use-dark-mode'
 
 interface Props {
   children: React.ReactNode
 }
 
 interface ThemeProps {
-  theme: typeof light | typeof dark
+  theme: DefaultTheme
   toggleTheme: () => void
+  darkmode: DarkMode
 }
+
 
 const ThemeContext = createContext<ThemeProps>({} as ThemeProps)
 export const useTheme = () => useContext(ThemeContext)
 
 const ThemeContextProvider: NextPage<Props> = ({ children }) => {
-  const [theme, setTheme] = useState(light)
+  const darkmode = useDarkMode(true, { classNameDark: 'dark', classNameLight: 'light' })
+  const theme = darkmode.value ? dark : light
 
   const toggleTheme = () => {
-    setTheme(theme.title === 'light' ? dark : light)
+    darkmode.toggle()
   }
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, darkmode }}>
       <ThemeProvider theme={theme}>
         {children}
         <GlobalStyles />

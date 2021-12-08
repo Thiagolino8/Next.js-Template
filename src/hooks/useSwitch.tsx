@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 import { createContext, useContext, useState } from 'react'
-import { useTheme } from './themeContext'
+import { useTheme } from './useTheme'
 
 interface Props {
   children: React.ReactNode
@@ -16,8 +16,8 @@ const SwitchContext = createContext<SwitchProps>({} as SwitchProps)
 export const useSwitch = () => useContext(SwitchContext)
 
 const SwitchContextProvider: NextPage<Props> = ({ children }) => {
-  const { toggleTheme } = useTheme()
-  const [enabled, setEnabled] = useState(false)
+  const { toggleTheme, darkmode } = useTheme()
+  const [enabled, setEnabled] = useState(darkmode.value)
 
   const handleSwitch = () => {
     setEnabled(enabled === true ? false : true)
