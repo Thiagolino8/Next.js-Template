@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { Container, Header, Main } from '../styles/Pages/Home'
 import Toggle from '../assets/components/toggle'
 import SwitchContextProvider from '../hooks/useSwitch'
-import DarkModeToggle from '../assets/components/reactToggle'
 import ThemeContextProvider from '../hooks/useTheme'
 import { useSSR } from 'use-ssr'
 
