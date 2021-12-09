@@ -4,10 +4,10 @@ import { useSwitch } from '../../hooks/useSwitch'
 import ToggleButton from '../../styles/Components/Toggle'
 
 const Toggle: NextPage = () => {
-  const { enabled, handleSwitch, SwitchClasses } = useSwitch()
+  const { enabled, toggleTheme, SwitchClasses } = useSwitch()
 
   return (
-    <Switch checked={enabled} onChange={handleSwitch} className={SwitchClasses}>
+    <Switch checked={enabled} onChange={toggleTheme} className={SwitchClasses}>
       <ToggleButton enabled={enabled} />
     </Switch>
   )

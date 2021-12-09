@@ -21,8 +21,8 @@ const ThemeContext = createContext<ThemeProps>({} as ThemeProps)
 export const useTheme = () => useContext(ThemeContext)
 
 const ThemeContextProvider: NextPage<Props> = ({ children }) => {
-  const darkmode = useDarkMode(false, { classNameDark: 'dark', classNameLight: 'light' })
-  const theme = darkmode.value ? dark : light
+  const darkmode = useDarkMode(true, { classNameDark: 'dark', classNameLight: 'light' })
+  const theme = darkmode.value ? light : dark
 
   const toggleTheme = () => {
     darkmode.toggle()

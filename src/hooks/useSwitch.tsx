@@ -8,7 +8,7 @@ interface Props {
 
 interface SwitchProps {
   enabled: boolean
-  handleSwitch: () => void
+  toggleTheme: () => void
   SwitchClasses?: string
 }
 
@@ -17,12 +17,7 @@ export const useSwitch = () => useContext(SwitchContext)
 
 const SwitchContextProvider: NextPage<Props> = ({ children }) => {
   const { toggleTheme, darkmode } = useTheme()
-  const [enabled, setEnabled] = useState(darkmode.value)
-
-  const handleSwitch = () => {
-    setEnabled(enabled === true ? false : true)
-    toggleTheme()
-  }
+  const enabled = darkmode.value
 
   const SwitchClasses = `
     ${enabled ? 'bg-primary' : 'bg-white'}
@@ -30,7 +25,7 @@ const SwitchContextProvider: NextPage<Props> = ({ children }) => {
   `
 
   return (
-    <SwitchContext.Provider value={{ enabled, handleSwitch, SwitchClasses }}>
+    <SwitchContext.Provider value={{ enabled, toggleTheme, SwitchClasses }}>
       {children}
     </SwitchContext.Provider>
   )
