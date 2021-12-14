@@ -24,6 +24,7 @@ export const Container = styled.div`
       mt-6
       text-2xl
       leading-8
+      text-justify
     `}
   }
 `

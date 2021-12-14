@@ -20,8 +20,8 @@ const SwitchContextProvider: NextPage<Props> = ({ children }) => {
   const enabled = darkmode.value
 
   const SwitchClasses = `
-    ${enabled ? 'bg-primary' : 'bg-white'}
-    relative inline-flex flex-shrink-0 items-center h-6 w-11 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75
+    ${enabled ? 'bg-primary border-0' : 'bg-white border border-primary'}
+    relative inline-flex flex-shrink-0 items-center h-6 w-11 rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75
   `
 
   return (
