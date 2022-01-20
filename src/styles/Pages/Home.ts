@@ -3,12 +3,12 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   ${tw`
-  p-14
-  flex
-  flex-col
-  w-screen
-  h-screen
-  justify-center
+    p-14
+    flex
+    flex-col
+    w-screen
+    h-screen
+    justify-center
   `}
 
   h1 {
