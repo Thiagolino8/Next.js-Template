@@ -3,15 +3,6 @@ import tw, { GlobalStyles as BaseStyles} from 'twin.macro'
 import 'tailwindcss/tailwind.css'
 
 const CustomStyles = createGlobalStyle`
-  * {
-    ${tw`
-      m-0
-      p-0
-      box-border
-      outline-none
-    `}
-  }
-
   body {
     ${tw`
       bg-background
