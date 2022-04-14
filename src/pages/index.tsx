@@ -24,8 +24,7 @@ const Home: NextPage = () => {
       <Main>
         <h1>Default Template Next.js</h1>
         <p>
-          Este é um template base para projetos Next.js que contem Typescript,
-          Tailwind, Twin.macro e Styled Components
+          Este é um template base para projetos Next.js que contem Typescript, Preact, Tailwind, Twin.macro e Styled Components
         </p>
       </Main>
 
