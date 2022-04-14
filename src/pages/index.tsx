@@ -1,18 +1,22 @@
 import type { NextPage } from 'next'
 import { Container, Header, Main } from '../styles/Pages/Home'
-import Toggle from '../assets/components/toggle'
 import SwitchContextProvider from '../hooks/useSwitch'
 import ThemeContextProvider from '../hooks/useTheme'
-import { useSSR } from 'use-ssr'
+import dynamic from 'next/dynamic'
+
+
+const Toggle = dynamic(
+  () => import('../assets/components/toggle'),
+  { ssr: false }
+);
 
 const Home: NextPage = () => {
-  const { isBrowser } = useSSR()
   return (
     <Container>
       <Header>
         <ThemeContextProvider>
           <SwitchContextProvider>
-            {isBrowser && <Toggle />}
+            <Toggle />
           </SwitchContextProvider>
         </ThemeContextProvider>
       </Header>

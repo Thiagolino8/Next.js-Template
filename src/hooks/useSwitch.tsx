@@ -1,5 +1,5 @@
 import { NextPage } from 'next'
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext} from 'react'
 import { useTheme } from './useTheme'
 
 interface Props {
